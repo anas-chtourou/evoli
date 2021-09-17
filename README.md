@@ -40,6 +40,13 @@ When a developer is merging a PR to the Dev branch. The dev branch should:
 - Build a docker image
 - Deploy the **pre-production app** in the Kubernetes cluster by using ArgoCD
 
+### PR to main branch
+
+When a PR is open to the main branch. Run the following operations in the CI
+
+- Run unit test
+- Run lint
+
 ### Main branch
 
 The main branch represent the `production` environment
@@ -48,3 +55,10 @@ When a developer is merging a PR to the Dev branch. The dev branch should:
 - Run unit test
 - Build a docker image
 - Deploy the **production app** in the Kubernetes cluster by using ArgoCD
+
+
+**Tips**
+
+- Run unit test with the command ```cargo test```
+- Run the lint with the command ```cargo clippy```
+- Use a separate repository for the GitOps code
