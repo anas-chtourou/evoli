@@ -1,20 +1,30 @@
 # Evoli 🐈
 
-Lulu Dans Ma Rue's technical test taht a candidate need to do to apply for a DevOps / Fullstack developer position 🤓
+<p align="center">
+  <img src="evoli.gif" alt="workflow" width="500"/>
+</p>
+
+Lulu Dans Ma Rue's technical test that a candidate for the DevOps / Fullstack developer position 🤓
 
 ## Subject 📝
 
-The subject of this technical test is to automate the deployment of this repository to a **Kubernetes cluster. which you will create**. This app should be configure to be deployed by using for .e.g a CI/CD pipeline. In order to help you, below is the diagram that you could inspire to create a pipeline.
+The subject of this technical test is to automate the deployment of this repository to a **Kubernetes cluster which you will create**.
+
+The app need to be automated to allow developers to easily deploy their works on the Kubernetes cluster. You can use, for example, a CI/CD pipeline based on the diagram below.
+
+### Sum-up of the subject
+
+- Create a Kubernetes cluster
+- Automate the deployment of this app
 
 <p align="center">
   <img src="workflow.jpg" alt="workflow" width="500"/>
 </p>
 
-An existing **Dockerfile** already exist in the repository. You can re-use it to deploy the app in the Kubernetes cluster.
-
 ## Deploy the evoli app tips
 
-- You'll need to set an environment variable to the Kubernetes deployment. The value is
+- An existing **Dockerfile** already exist in the repository. You can re-use it to build the container
+- You'll need to set an environment variable to the Kubernetes deployment. Below is the env setted in plain Kubernetes YAML spec
 
 ```yaml
 env:
@@ -24,11 +34,12 @@ env:
 
 - Unit test can be run with the command **cargo test**
 - Lint can be run with the **cargo clippy** command. If you choose to use **github action** an existing actions already exist to do this steps
-- The app is running on the port *3000*. For this technical test don't bother with the Ingress, you could just expose it with the LoadBalancer type of service
+- The app is running on the **port 3000**.
+- Don't bother with the Ingress. You can expose the app with the LoadBalancer type
 
 ## Test your deployment
 
-Should everything works fine. You should see a page with something like this:
+Should everything works. Type the loadbalancer IP and you should see something similar to:
 
 <p align="center">
   <img src="example.png" alt="workflow" width="500"/>
@@ -36,11 +47,11 @@ Should everything works fine. You should see a page with something like this:
 
 ## Tool constraint
 
-You are *incite to use whatever tool* it seems to you necessary to resolve this technical test. We'll *focus* on the solutions that you'll bring to resolve this technical test.
+You are *invited to use whatever tool* it seems necessary to resolve this technical test. We'll *focus* on the solutions that you'll bring to resolve this technical test.
 
 ## Duration of this test
 
-The test has been designed to last for about 2~3 days.
+The test has been designed to last for about 2 ~ 3 days.
 
 ## Questions
 
