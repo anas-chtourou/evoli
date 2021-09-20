@@ -51,7 +51,7 @@ You are *invited to use whatever tool* it seems necessary to resolve this techni
 
 ## Duration of this test
 
-The test has been designed to last for about 2 ~ 3 days.
+The test has been designed to last for about 2 days.
 
 ## Questions
 
