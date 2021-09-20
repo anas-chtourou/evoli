@@ -1,64 +1,47 @@
-# Evoli
+# Evoli 🐈
 
-Lulu Dans Ma Rue technical test that a candidate need to do for the DevOps / Fullstack developer position
+Lulu Dans Ma Rue's technical test taht a candidate need to do to apply for a DevOps / Fullstack developer position 🤓
 
-## Goal
+## Subject 📝
 
-### 1st part (est. half a day ~ day)
+The subject of this technical test is to automate the deployment of this repository to a **Kubernetes cluster. which you will create**. This app should be configure to be deployed by using for .e.g a CI/CD pipeline. In order to help you, below is the diagram that you could inspire to create a pipeline.
 
-The goal of this technical is divided in two parts:
+<p align="center">
+  <img src="workflow.jpg" alt="workflow" width="500"/>
+</p>
 
-1st part is to deploy a Kubernetes cluster from scratch with *Terraform* to Google Cloud Platform. The Kubernetes cluster should at least have these third parties services deployed with the tool of your choice .e.g: Helm, Kustomize. 
+An existing **Dockerfile** already exist in the repository. You can re-use it to deploy the app in the Kubernetes cluster.
 
-To deploy the Kubernetes cluster you can use the IaC tool of your choice .e.g: Terraform, Ansible, Pulumi etc...
+## Deploy the evoli app tips
 
-- ArgoCD
-- Prometheus
-- Grafana
+- You'll need to set an environment variable to the Kubernetes deployment. The value is
 
-Tips:
+```yaml
+env:
+    name: ENV
+    value: prod
+```
 
-- Use preemptible nodes to reduce the cost
-- Namespace could be useful
-- Use the machine type n2d-standard-2 
+- Unit test can be run with the command **cargo test**
+- Lint can be run with the **cargo clippy** command. If you choose to use **github action** an existing actions already exist to do this steps
+- The app is running on the port *3000*. For this technical test don't bother with the Ingress, you could just expose it with the LoadBalancer type of service
 
-### 2nd part (est. 1 day)
+## Test your deployment
 
-The 2nd part of this test required you to configure a small app to deploy it in the Kubernetes cluster by using a CI/CD pipeline in combination of using the ArgoCD tool to implement a GitOps deployment process.
+Should everything works fine. You should see a page with something like this:
 
-- To create the pipeline, please *fork* this repository
-- Create your CI/CD pipeline by following this diagram
+<p align="center">
+  <img src="example.png" alt="workflow" width="500"/>
+</p>
 
-Below is the description of the pipeline
+## Tool constraint
 
-### Dev branch
+You are *incite to use whatever tool* it seems to you necessary to resolve this technical test. We'll *focus* on the solutions that you'll bring to resolve this technical test.
 
-The dev branch represent the `preproduction` environment
+## Duration of this test
 
-When a developer is merging a PR to the Dev branch. The dev branch should:
-- Run unit test
-- Build a docker image
-- Deploy the **pre-production app** in the Kubernetes cluster by using ArgoCD
+The test has been designed to last for about 2~3 days.
 
-### PR to main branch
+## Questions
 
-When a PR is open to the main branch. Run the following operations in the CI
-
-- Run unit test
-- Run lint
-
-### Main branch
-
-The main branch represent the `production` environment
-
-When a developer is merging a PR to the Dev branch. The dev branch should:
-- Run unit test
-- Build a docker image
-- Deploy the **production app** in the Kubernetes cluster by using ArgoCD
-
-
-**Tips**
-
-- Run unit test with the command ```cargo test```
-- Run the lint with the command ```cargo clippy```
-- Use a separate repository for the GitOps code
+If you have any questions. Please contact me at marc.intha-amnouay@luludansmarue.org
