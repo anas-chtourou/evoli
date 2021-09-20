@@ -51,7 +51,7 @@ You are *invited to use whatever tool* it seems necessary to resolve this techni
 
 ## Duration of this test
 
-The test has been designed to last for about 2 days.
+It's ok if you don't finish the test. My recommendation is to not spend more than 20 hours. Once again we're more interest at how you are trying to solve the technical test.
 
 ## Questions
 
