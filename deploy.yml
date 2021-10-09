@@ -19,9 +19,6 @@ spec:
         name: lulupod
         ports:
         - containerPort: 3000
-        env:
-          name: ENV
-          value: prod
 
 ---
 apiVersion: v1
