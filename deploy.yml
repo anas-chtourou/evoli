@@ -15,7 +15,7 @@ spec:
         app: luluapp
     spec:
       containers:
-      - image: luluimage
+      - image: anaschtourou/luluimage
         name: lulupod
         ports:
         - containerPort: 3000
@@ -29,8 +29,7 @@ metadata:
   name: luluservice
 spec:
   ports:
-  - nodePort: 32223
-    targetPort: 3000
+  - targetPort: 3000
   selector:
     app: luluapp
   type: LoadBalancer
